@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Function to scrape tables from a URL
-@st.cache_resource
+@st.cache(allow_output_mutation=True)
 def scrape_tables(url):
     tables = pd.read_html(url)
     return tables
